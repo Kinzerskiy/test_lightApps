@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  InfratedDetectionViewController.swift
 //  test_lightApps
 //
 //  Created by Anton on 26.10.2024.
@@ -7,13 +7,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class InfratedDetectionViewController: UIViewController {
+    var router: MainRouting?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
+    
 
+ 
 
 }
-

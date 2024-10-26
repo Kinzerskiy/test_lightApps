@@ -1,0 +1,420 @@
+[
+      {
+        "name": "Home_WiFi_01",
+        "IP": "192.168.0.1",
+        "isOk": true,
+        "connectionType": "WPA2",
+        "MACAddress": "A1:B2:C3:D4:E5:F6",
+        "hostname": "Device01"
+      },
+      {
+        "name": "Office_Network_02",
+        "IP": "192.168.1.2",
+        "isOk": false,
+        "connectionType": "WPA3",
+        "MACAddress": "A2:B3:C4:D5:E6:F7",
+        "hostname": "Device02"
+      },
+      {
+        "name": "Cafe_WiFi_03",
+        "IP": "10.0.0.3",
+        "isOk": true,
+        "connectionType": "Open",
+        "MACAddress": "A3:B4:C5:D6:E7:F8",
+        "hostname": "Device03"
+      },
+      {
+        "name": "Library_Network_04",
+        "IP": "172.16.0.4",
+        "isOk": true,
+        "connectionType": "WEP",
+        "MACAddress": "A4:B5:C6:D7:E8:F9",
+        "hostname": "Device04"
+      },
+      {
+        "name": "Guest_WiFi_05",
+        "IP": "192.168.10.5",
+        "isOk": false,
+        "connectionType": "WPA2",
+        "MACAddress": "A5:B6:C7:D8:E9:FA",
+        "hostname": "Device05"
+      },
+      {
+        "name": "Airport_WiFi_06",
+        "IP": "10.1.1.6",
+        "isOk": true,
+        "connectionType": "Open",
+        "MACAddress": "A6:B7:C8:D9:EA:FB",
+        "hostname": "Device06"
+      },
+      {
+        "name": "Hotel_Network_07",
+        "IP": "192.168.50.7",
+        "isOk": true,
+        "connectionType": "WPA2",
+        "MACAddress": "A7:B8:C9:DA:EB:FC",
+        "hostname": "Device07"
+      },
+      {
+        "name": "Public_WiFi_08",
+        "IP": "172.18.0.8",
+        "isOk": false,
+        "connectionType": "Open",
+        "MACAddress": "A8:B9:CA:DB:EC:FD",
+        "hostname": "Device08"
+      },
+      {
+        "name": "University_WiFi_09",
+        "IP": "192.168.2.9",
+        "isOk": true,
+        "connectionType": "WPA2",
+        "MACAddress": "A9:BA:CB:DC:ED:FE",
+        "hostname": "Device09"
+      },
+      {
+        "name": "Gym_WiFi_10",
+        "IP": "10.0.5.10",
+        "isOk": false,
+        "connectionType": "Open",
+        "MACAddress": "AA:BB:CC:DD:EE:FF",
+        "hostname": "Device10"
+      },
+      {
+        "name": "School_Network_11",
+        "IP": "192.168.3.11",
+        "isOk": true,
+        "connectionType": "WPA3",
+        "MACAddress": "AB:BC:CD:DE:EF:F0",
+        "hostname": "Device11"
+      },
+      {
+        "name": "Mall_WiFi_12",
+        "IP": "10.2.2.12",
+        "isOk": true,
+        "connectionType": "Open",
+        "MACAddress": "AC:BD:CE:DF:E0:F1",
+        "hostname": "Device12"
+      },
+      {
+        "name": "Park_Network_13",
+        "IP": "192.168.4.13",
+        "isOk": false,
+        "connectionType": "WEP",
+        "MACAddress": "AD:BE:CF:D0:E1:F2",
+        "hostname": "Device13"
+      },
+      {
+        "name": "City_Center_WiFi_14",
+        "IP": "172.20.0.14",
+        "isOk": true,
+        "connectionType": "WPA2",
+        "MACAddress": "AE:BF:C0:D1:E2:F3",
+        "hostname": "Device14"
+      },
+      {
+        "name": "Restaurant_WiFi_15",
+        "IP": "192.168.5.15",
+        "isOk": true,
+        "connectionType": "Open",
+        "MACAddress": "AF:C0:D1:E2:F3:F4",
+        "hostname": "Device15"
+      },
+      {
+        "name": "Shop_WiFi_16",
+        "IP": "10.1.1.16",
+        "isOk": false,
+        "connectionType": "WPA2",
+        "MACAddress": "B0:C1:D2:E3:F4:F5",
+        "hostname": "Device16"
+      },
+      {
+        "name": "Bank_Network_17",
+        "IP": "192.168.1.17",
+        "isOk": true,
+        "connectionType": "WPA3",
+        "MACAddress": "B1:C2:D3:E4:F5:F6",
+        "hostname": "Device17"
+      },
+      {
+        "name": "Coffee_Shop_WiFi_18",
+        "IP": "172.22.0.18",
+        "isOk": true,
+        "connectionType": "Open",
+        "MACAddress": "B2:C3:D4:E5:F6:F7",
+        "hostname": "Device18"
+      },
+      {
+        "name": "Metro_WiFi_19",
+        "IP": "192.168.7.19",
+        "isOk": false,
+        "connectionType": "WEP",
+        "MACAddress": "B3:C4:D5:E6:F7:F8",
+        "hostname": "Device19"
+      },
+      {
+        "name": "Bus_WiFi_20",
+        "IP": "10.3.3.20",
+        "isOk": true,
+        "connectionType": "WPA2",
+        "MACAddress": "B4:C5:D6:E7:F8:F9",
+        "hostname": "Device20"
+      },
+      {
+        "name": "Music_Venue_WiFi_21",
+        "IP": "192.168.8.21",
+        "isOk": true,
+        "connectionType": "Open",
+        "MACAddress": "B5:C6:D7:E8:F9:FA",
+        "hostname": "Device21"
+      },
+      {
+        "name": "City_Library_22",
+        "IP": "172.24.0.22",
+        "isOk": true,
+        "connectionType": "WPA3",
+        "MACAddress": "B6:C7:D8:E9:FA:FB",
+        "hostname": "Device22"
+      },
+      {
+        "name": "Supermarket_Network_23",
+        "IP": "192.168.10.23",
+        "isOk": false,
+        "connectionType": "WPA2",
+        "MACAddress": "B7:C8:D9:FA:FB:FC",
+        "hostname": "Device23"
+      },
+      {
+        "name": "Lounge_WiFi_24",
+        "IP": "10.4.4.24",
+        "isOk": true,
+        "connectionType": "Open",
+        "MACAddress": "B8:C9:FA:FB:FC:FD",
+        "hostname": "Device24"
+      },
+      {
+        "name": "Clinic_Network_25",
+        "IP": "192.168.11.25",
+        "isOk": true,
+        "connectionType": "WPA3",
+        "MACAddress": "B9:FA:FB:FC:FD:FE",
+        "hostname": "Device25"
+      },
+      {
+        "name": "Hospital_WiFi_26",
+        "IP": "172.26.0.26",
+        "isOk": false,
+        "connectionType": "WEP",
+        "MACAddress": "BA:FB:FC:FD:FE:FF",
+        "hostname": "Device26"
+      },
+      
+        {
+          "name": "Home_WiFi_01",
+          "IP": "192.168.0.1",
+          "isOk": true,
+          "connectionType": "WPA2",
+          "MACAddress": "A1:B2:C3:D4:E5:F6",
+          "hostname": "Device01"
+        },
+        {
+          "name": "Office_Network_02",
+          "IP": "192.168.1.2",
+          "isOk": false,
+          "connectionType": "WPA3",
+          "MACAddress": "A2:B3:C4:D5:E6:F7",
+          "hostname": "Device02"
+        },
+        {
+          "name": "Cafe_WiFi_03",
+          "IP": "10.0.0.3",
+          "isOk": true,
+          "connectionType": "Open",
+          "MACAddress": "A3:B4:C5:D6:E7:F8",
+          "hostname": "Device03"
+        },
+        {
+          "name": "Library_Network_04",
+          "IP": "172.16.0.4",
+          "isOk": true,
+          "connectionType": "WEP",
+          "MACAddress": "A4:B5:C6:D7:E8:F9",
+          "hostname": "Device04"
+        },
+        {
+          "name": "Guest_WiFi_05",
+          "IP": "192.168.10.5",
+          "isOk": false,
+          "connectionType": "WPA2",
+          "MACAddress": "A5:B6:C7:D8:E9:FA",
+          "hostname": "Device05"
+        },
+        {
+          "name": "Airport_WiFi_06",
+          "IP": "10.1.1.6",
+          "isOk": true,
+          "connectionType": "Open",
+          "MACAddress": "A6:B7:C8:D9:EA:FB",
+          "hostname": "Device06"
+        },
+        {
+          "name": "Hotel_Network_07",
+          "IP": "192.168.50.7",
+          "isOk": true,
+          "connectionType": "WPA2",
+          "MACAddress": "A7:B8:C9:DA:EB:FC",
+          "hostname": "Device07"
+        },
+        {
+          "name": "Public_WiFi_08",
+          "IP": "172.18.0.8",
+          "isOk": false,
+          "connectionType": "Open",
+          "MACAddress": "A8:B9:CA:DB:EC:FD",
+          "hostname": "Device08"
+        },
+        {
+          "name": "University_WiFi_09",
+          "IP": "192.168.2.9",
+          "isOk": true,
+          "connectionType": "WPA2",
+          "MACAddress": "A9:BA:CB:DC:ED:FE",
+          "hostname": "Device09"
+        },
+        {
+          "name": "Gym_WiFi_10",
+          "IP": "10.0.5.10",
+          "isOk": false,
+          "connectionType": "Open",
+          "MACAddress": "AA:BB:CC:DD:EE:FF",
+          "hostname": "Device10"
+        },
+        {
+          "name": "School_Network_11",
+          "IP": "192.168.3.11",
+          "isOk": true,
+          "connectionType": "WPA3",
+          "MACAddress": "AB:BC:CD:DE:EF:F0",
+          "hostname": "Device11"
+        },
+        {
+          "name": "Mall_WiFi_12",
+          "IP": "10.2.2.12",
+          "isOk": true,
+          "connectionType": "Open",
+          "MACAddress": "AC:BD:CE:DF:E0:F1",
+          "hostname": "Device12"
+        },
+        {
+          "name": "Park_Network_13",
+          "IP": "192.168.4.13",
+          "isOk": false,
+          "connectionType": "WEP",
+          "MACAddress": "AD:BE:CF:D0:E1:F2",
+          "hostname": "Device13"
+        },
+        {
+          "name": "City_Center_WiFi_14",
+          "IP": "172.20.0.14",
+          "isOk": true,
+          "connectionType": "WPA2",
+          "MACAddress": "AE:BF:C0:D1:E2:F3",
+          "hostname": "Device14"
+        },
+        {
+          "name": "Restaurant_WiFi_15",
+          "IP": "192.168.5.15",
+          "isOk": true,
+          "connectionType": "Open",
+          "MACAddress": "AF:C0:D1:E2:F3:F4",
+          "hostname": "Device15"
+        },
+        {
+          "name": "Shop_WiFi_16",
+          "IP": "10.1.1.16",
+          "isOk": false,
+          "connectionType": "WPA2",
+          "MACAddress": "B0:C1:D2:E3:F4:F5",
+          "hostname": "Device16"
+        },
+        {
+          "name": "Bank_Network_17",
+          "IP": "192.168.1.17",
+          "isOk": true,
+          "connectionType": "WPA3",
+          "MACAddress": "B1:C2:D3:E4:F5:F6",
+          "hostname": "Device17"
+        },
+        {
+          "name": "Coffee_Shop_WiFi_18",
+          "IP": "172.22.0.18",
+          "isOk": true,
+          "connectionType": "Open",
+          "MACAddress": "B2:C3:D4:E5:F6:F7",
+          "hostname": "Device18"
+        },
+        {
+          "name": "Metro_WiFi_19",
+          "IP": "192.168.7.19",
+          "isOk": false,
+          "connectionType": "WEP",
+          "MACAddress": "B3:C4:D5:E6:F7:F8",
+          "hostname": "Device19"
+        },
+        {
+          "name": "Bus_WiFi_20",
+          "IP": "10.3.3.20",
+          "isOk": true,
+          "connectionType": "WPA2",
+          "MACAddress": "B4:C5:D6:E7:F8:F9",
+          "hostname": "Device20"
+        },
+        {
+          "name": "Music_Venue_WiFi_21",
+          "IP": "192.168.8.21",
+          "isOk": true,
+          "connectionType": "Open",
+          "MACAddress": "B5:C6:D7:E8:F9:FA",
+          "hostname": "Device21"
+        },
+        {
+          "name": "City_Library_22",
+          "IP": "172.24.0.22",
+          "isOk": true,
+          "connectionType": "WPA3",
+          "MACAddress": "B6:C7:D8:E9:FA:FB",
+          "hostname": "Device22"
+        },
+        {
+          "name": "Supermarket_Network_23",
+          "IP": "192.168.10.23",
+          "isOk": false,
+          "connectionType": "WPA2",
+          "MACAddress": "B7:C8:D9:FA:FB:FC",
+          "hostname": "Device23"
+        },
+        {
+          "name": "Lounge_WiFi_24",
+          "IP": "10.4.4.24",
+          "isOk": true,
+          "connectionType": "Open",
+          "MACAddress": "B8:C9:FA:FB:FC:FD",
+          "hostname": "Device24"
+        },
+        {
+          "name": "Clinic_Network_25",
+          "IP": "192.168.11.25",
+          "isOk": true,
+          "connectionType": "WPA3",
+          "MACAddress": "B9:FA:FB:FC:FD:FE",
+          "hostname": "Device25"
+        },
+        {
+          "name": "Hospital_WiFi_26",
+          "IP": "172.26.0.26",
+          "isOk": false,
+          "connectionType": "WEP",
+          "MACAddress": "BA:FB:FC:FD:FE:FF",
+          "hostname": "Device26"
+        }
+      
+]

@@ -7,23 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A1D90D22CCD3DCE00B22D38 /* wifi_networks.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A1D90D12CCD3DCE00B22D38 /* wifi_networks.json */; };
+		3A1D90D42CCD3F0900B22D38 /* WiFiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D90D32CCD3F0900B22D38 /* WiFiCell.swift */; };
+		3A1D90D72CCD46CC00B22D38 /* WiFiNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D90D62CCD46CC00B22D38 /* WiFiNetwork.swift */; };
+		3A1D90DB2CCD4F5700B22D38 /* DeviceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D90DA2CCD4F5700B22D38 /* DeviceDetailsViewController.swift */; };
 		3A88C4D42CCCC1B400ED9959 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A88C4D32CCCC1B400ED9959 /* AppDelegate.swift */; };
 		3A88C4D62CCCC1B400ED9959 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A88C4D52CCCC1B400ED9959 /* SceneDelegate.swift */; };
-		3A88C4D82CCCC1B400ED9959 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A88C4D72CCCC1B400ED9959 /* ViewController.swift */; };
-		3A88C4DB2CCCC1B400ED9959 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 3A88C4DA2CCCC1B400ED9959 /* Base */; };
+		3A88C4D82CCCC1B400ED9959 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A88C4D72CCCC1B400ED9959 /* MainViewController.swift */; };
 		3A88C4DD2CCCC1B600ED9959 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A88C4DC2CCCC1B600ED9959 /* Assets.xcassets */; };
 		3A88C4E02CCCC1B600ED9959 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 3A88C4DF2CCCC1B600ED9959 /* Base */; };
+		3A88C4E82CCCC51600ED9959 /* ApplicationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A88C4E72CCCC51600ED9959 /* ApplicationRouter.swift */; };
+		3A88C4EA2CCCC53700ED9959 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A88C4E92CCCC53700ED9959 /* MainRouter.swift */; };
+		3A88C4EC2CCCC54E00ED9959 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A88C4EB2CCCC54E00ED9959 /* BaseRouter.swift */; };
+		3A88C4EE2CCCC57500ED9959 /* NavigationAssebly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A88C4ED2CCCC57500ED9959 /* NavigationAssebly.swift */; };
+		3A88C4F02CCCC5A500ED9959 /* BaseAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A88C4EF2CCCC5A500ED9959 /* BaseAssembly.swift */; };
+		3A88C4F22CCCC5B600ED9959 /* ApplicationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A88C4F12CCCC5B600ED9959 /* ApplicationAssembly.swift */; };
+		3A88C4F62CCCCAC400ED9959 /* MagneticDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A88C4F52CCCCAC400ED9959 /* MagneticDetectionViewController.swift */; };
+		3A88C4F92CCCCD0900ED9959 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A88C4F82CCCCD0900ED9959 /* ScanViewController.swift */; };
+		3A88C4FB2CCCCDC500ED9959 /* InfratedDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A88C4FA2CCCCDC500ED9959 /* InfratedDetectionViewController.swift */; };
+		3A88C4FD2CCCCDE000ED9959 /* BluetoothDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A88C4FC2CCCCDE000ED9959 /* BluetoothDetectionViewController.swift */; };
+		3A88C4FF2CCCCDF400ED9959 /* AntispyTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A88C4FE2CCCCDF400ED9959 /* AntispyTipsViewController.swift */; };
+		3A88C5012CCCCFDA00ED9959 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A88C5002CCCCFDA00ED9959 /* SetupViewController.swift */; };
+		3A88C5052CCCD81200ED9959 /* Color+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A88C5042CCCD81200ED9959 /* Color+extension.swift */; };
+		3A88C5072CCCE61B00ED9959 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A88C5062CCCE61B00ED9959 /* Constants.swift */; };
+		3A88C5092CCCF48E00ED9959 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A88C5082CCCF48E00ED9959 /* MainCell.swift */; };
+		3A88C50B2CCD047600ED9959 /* scanAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A88C50A2CCD047600ED9959 /* scanAnimation.json */; };
+		3A88C50E2CCD064000ED9959 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 3A88C50D2CCD064000ED9959 /* Lottie */; };
+		3A88C5102CCD2A1100ED9959 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A88C50F2CCD2A1100ED9959 /* ResultViewController.swift */; };
+		3A88C5122CCD352400ED9959 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A88C5112CCD352400ED9959 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A1D90D12CCD3DCE00B22D38 /* wifi_networks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wifi_networks.json; sourceTree = "<group>"; };
+		3A1D90D32CCD3F0900B22D38 /* WiFiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiCell.swift; sourceTree = "<group>"; };
+		3A1D90D62CCD46CC00B22D38 /* WiFiNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiNetwork.swift; sourceTree = "<group>"; };
+		3A1D90DA2CCD4F5700B22D38 /* DeviceDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailsViewController.swift; sourceTree = "<group>"; };
 		3A88C4D02CCCC1B400ED9959 /* test_lightApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test_lightApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A88C4D32CCCC1B400ED9959 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A88C4D52CCCC1B400ED9959 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3A88C4D72CCCC1B400ED9959 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3A88C4DA2CCCC1B400ED9959 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3A88C4D72CCCC1B400ED9959 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3A88C4DC2CCCC1B600ED9959 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A88C4DF2CCCC1B600ED9959 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A88C4E12CCCC1B600ED9959 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A88C4E72CCCC51600ED9959 /* ApplicationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationRouter.swift; sourceTree = "<group>"; };
+		3A88C4E92CCCC53700ED9959 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		3A88C4EB2CCCC54E00ED9959 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		3A88C4ED2CCCC57500ED9959 /* NavigationAssebly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationAssebly.swift; sourceTree = "<group>"; };
+		3A88C4EF2CCCC5A500ED9959 /* BaseAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAssembly.swift; sourceTree = "<group>"; };
+		3A88C4F12CCCC5B600ED9959 /* ApplicationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationAssembly.swift; sourceTree = "<group>"; };
+		3A88C4F52CCCCAC400ED9959 /* MagneticDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagneticDetectionViewController.swift; sourceTree = "<group>"; };
+		3A88C4F82CCCCD0900ED9959 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		3A88C4FA2CCCCDC500ED9959 /* InfratedDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfratedDetectionViewController.swift; sourceTree = "<group>"; };
+		3A88C4FC2CCCCDE000ED9959 /* BluetoothDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothDetectionViewController.swift; sourceTree = "<group>"; };
+		3A88C4FE2CCCCDF400ED9959 /* AntispyTipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntispyTipsViewController.swift; sourceTree = "<group>"; };
+		3A88C5002CCCCFDA00ED9959 /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
+		3A88C5042CCCD81200ED9959 /* Color+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+extension.swift"; sourceTree = "<group>"; };
+		3A88C5062CCCE61B00ED9959 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3A88C5082CCCF48E00ED9959 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		3A88C50A2CCD047600ED9959 /* scanAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = scanAnimation.json; sourceTree = "<group>"; };
+		3A88C50F2CCD2A1100ED9959 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		3A88C5112CCD352400ED9959 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,12 +74,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A88C50E2CCD064000ED9959 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A1D90D52CCD3F1000B22D38 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3A88C5082CCCF48E00ED9959 /* MainCell.swift */,
+				3A1D90D32CCD3F0900B22D38 /* WiFiCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3A1D90D82CCD46DD00B22D38 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3A1D90D62CCD46CC00B22D38 /* WiFiNetwork.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3A1D90D92CCD46FC00B22D38 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3A88C5062CCCE61B00ED9959 /* Constants.swift */,
+				3A88C5042CCCD81200ED9959 /* Color+extension.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		3A88C4C72CCCC1B400ED9959 = {
 			isa = PBXGroup;
 			children = (
@@ -58,13 +128,56 @@
 			children = (
 				3A88C4D32CCCC1B400ED9959 /* AppDelegate.swift */,
 				3A88C4D52CCCC1B400ED9959 /* SceneDelegate.swift */,
-				3A88C4D72CCCC1B400ED9959 /* ViewController.swift */,
-				3A88C4D92CCCC1B400ED9959 /* Main.storyboard */,
-				3A88C4DC2CCCC1B600ED9959 /* Assets.xcassets */,
-				3A88C4DE2CCCC1B600ED9959 /* LaunchScreen.storyboard */,
+				3A88C5112CCD352400ED9959 /* ViewModel.swift */,
+				3A1D90D82CCD46DD00B22D38 /* Model */,
+				3A88C5022CCCD61800ED9959 /* Routers */,
+				3A88C5032CCCD62900ED9959 /* Assembly */,
+				3A88C4F72CCCCADA00ED9959 /* Controllers */,
+				3A1D90D52CCD3F1000B22D38 /* Cells */,
+				3A1D90D92CCD46FC00B22D38 /* Helpers */,
 				3A88C4E12CCCC1B600ED9959 /* Info.plist */,
+				3A88C4DE2CCCC1B600ED9959 /* LaunchScreen.storyboard */,
+				3A88C4DC2CCCC1B600ED9959 /* Assets.xcassets */,
+				3A88C50A2CCD047600ED9959 /* scanAnimation.json */,
+				3A1D90D12CCD3DCE00B22D38 /* wifi_networks.json */,
 			);
 			path = test_lightApps;
+			sourceTree = "<group>";
+		};
+		3A88C4F72CCCCADA00ED9959 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3A88C4D72CCCC1B400ED9959 /* MainViewController.swift */,
+				3A88C4F52CCCCAC400ED9959 /* MagneticDetectionViewController.swift */,
+				3A88C4F82CCCCD0900ED9959 /* ScanViewController.swift */,
+				3A88C4FA2CCCCDC500ED9959 /* InfratedDetectionViewController.swift */,
+				3A88C4FC2CCCCDE000ED9959 /* BluetoothDetectionViewController.swift */,
+				3A88C4FE2CCCCDF400ED9959 /* AntispyTipsViewController.swift */,
+				3A88C5002CCCCFDA00ED9959 /* SetupViewController.swift */,
+				3A88C50F2CCD2A1100ED9959 /* ResultViewController.swift */,
+				3A1D90DA2CCD4F5700B22D38 /* DeviceDetailsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3A88C5022CCCD61800ED9959 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				3A88C4EB2CCCC54E00ED9959 /* BaseRouter.swift */,
+				3A88C4E72CCCC51600ED9959 /* ApplicationRouter.swift */,
+				3A88C4E92CCCC53700ED9959 /* MainRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		3A88C5032CCCD62900ED9959 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				3A88C4ED2CCCC57500ED9959 /* NavigationAssebly.swift */,
+				3A88C4EF2CCCC5A500ED9959 /* BaseAssembly.swift */,
+				3A88C4F12CCCC5B600ED9959 /* ApplicationAssembly.swift */,
+			);
+			path = Assembly;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +196,9 @@
 			dependencies = (
 			);
 			name = test_lightApps;
+			packageProductDependencies = (
+				3A88C50D2CCD064000ED9959 /* Lottie */,
+			);
 			productName = test_lightApps;
 			productReference = 3A88C4D02CCCC1B400ED9959 /* test_lightApps.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +227,9 @@
 				Base,
 			);
 			mainGroup = 3A88C4C72CCCC1B400ED9959;
+			packageReferences = (
+				3A88C50C2CCD064000ED9959 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 3A88C4D12CCCC1B400ED9959 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,9 +244,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A88C50B2CCD047600ED9959 /* scanAnimation.json in Resources */,
+				3A1D90D22CCD3DCE00B22D38 /* wifi_networks.json in Resources */,
 				3A88C4DD2CCCC1B600ED9959 /* Assets.xcassets in Resources */,
 				3A88C4E02CCCC1B600ED9959 /* Base in Resources */,
-				3A88C4DB2CCCC1B400ED9959 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +258,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A88C4D82CCCC1B400ED9959 /* ViewController.swift in Sources */,
+				3A88C4FF2CCCCDF400ED9959 /* AntispyTipsViewController.swift in Sources */,
+				3A88C5102CCD2A1100ED9959 /* ResultViewController.swift in Sources */,
+				3A88C5072CCCE61B00ED9959 /* Constants.swift in Sources */,
+				3A88C4FB2CCCCDC500ED9959 /* InfratedDetectionViewController.swift in Sources */,
+				3A88C4F02CCCC5A500ED9959 /* BaseAssembly.swift in Sources */,
+				3A88C4EA2CCCC53700ED9959 /* MainRouter.swift in Sources */,
+				3A88C5012CCCCFDA00ED9959 /* SetupViewController.swift in Sources */,
+				3A88C5052CCCD81200ED9959 /* Color+extension.swift in Sources */,
+				3A88C4EC2CCCC54E00ED9959 /* BaseRouter.swift in Sources */,
+				3A1D90D42CCD3F0900B22D38 /* WiFiCell.swift in Sources */,
+				3A88C4D82CCCC1B400ED9959 /* MainViewController.swift in Sources */,
+				3A88C5122CCD352400ED9959 /* ViewModel.swift in Sources */,
+				3A88C5092CCCF48E00ED9959 /* MainCell.swift in Sources */,
 				3A88C4D42CCCC1B400ED9959 /* AppDelegate.swift in Sources */,
 				3A88C4D62CCCC1B400ED9959 /* SceneDelegate.swift in Sources */,
+				3A1D90D72CCD46CC00B22D38 /* WiFiNetwork.swift in Sources */,
+				3A88C4F62CCCCAC400ED9959 /* MagneticDetectionViewController.swift in Sources */,
+				3A1D90DB2CCD4F5700B22D38 /* DeviceDetailsViewController.swift in Sources */,
+				3A88C4E82CCCC51600ED9959 /* ApplicationRouter.swift in Sources */,
+				3A88C4FD2CCCCDE000ED9959 /* BluetoothDetectionViewController.swift in Sources */,
+				3A88C4F22CCCC5B600ED9959 /* ApplicationAssembly.swift in Sources */,
+				3A88C4EE2CCCC57500ED9959 /* NavigationAssebly.swift in Sources */,
+				3A88C4F92CCCCD0900ED9959 /* ScanViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3A88C4D92CCCC1B400ED9959 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3A88C4DA2CCCC1B400ED9959 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3A88C4DE2CCCC1B600ED9959 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -218,7 +350,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -275,7 +407,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -297,9 +429,8 @@
 				INFOPLIST_FILE = test_lightApps/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -325,9 +456,8 @@
 				INFOPLIST_FILE = test_lightApps/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -363,6 +493,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3A88C50C2CCD064000ED9959 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3A88C50D2CCD064000ED9959 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A88C50C2CCD064000ED9959 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3A88C4C82CCCC1B400ED9959 /* Project object */;
 }
