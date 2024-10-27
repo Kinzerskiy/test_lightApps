@@ -10,7 +10,6 @@ import Lottie
 
 class ScanViewController: UIViewController {
     var router: MainRouting?
-    private var isScanningStopped = false
     private let viewModel = ViewModel.shared
     
     private let scanAnimationView: LottieAnimationView = {
@@ -48,11 +47,6 @@ class ScanViewController: UIViewController {
         return label
     }()
     
-    var wifiName: String?
-    private var timer: Timer?
-    private var totalDevicesFound: Int = 0
-    private var elapsedTime: Int = 0
-    
     private let wifiNameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -81,49 +75,53 @@ class ScanViewController: UIViewController {
     private let horizontalStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.spacing = 10
-        stackView.distribution = .fillEqually
+        stackView.spacing = 7
+        stackView.distribution = .fill
         return stackView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        
+    }
+    
+    func setupUI() {
+        bindViewModel()
         updateUI()
         scanAnimationView.play()
-        bindViewModel()
-        
-        ViewModel.shared.startDeviceScanning { [weak self] in
-            guard let self = self else { return }
-            if !self.isScanningStopped {
-                self.router?.dissmiss(viewController: self, animated: true, completion: {
-                    
-                    self.router?.showResult(viewController: self, animated: true)
-                })
-            }
-        }
+        stopButton.addTarget(self, action: #selector(stopDetectionTapped), for: .touchUpInside)
+        configureView()
     }
     
     private func bindViewModel() {
-        ViewModel.shared.currentWIFIUpdateHandler = { [weak self] wifiName in
+        viewModel.currentWIFIUpdateHandler = { [weak self] wifiName in
             self?.wifiNameLabel.text = wifiName
         }
         
-        ViewModel.shared.devicesFoundUpdateHandler = { [weak self] devicesFound in
+        viewModel.devicesFoundUpdateHandler = { [weak self] devicesFound in
             self?.devicesNumber.text = "\(devicesFound)"
         }
         
-        ViewModel.shared.percentageUpdateHandler = { [weak self] percentage in
+        viewModel.percentageUpdateHandler = { [weak self] percentage in
             self?.percentageLabel.text = percentage
+        }
+        
+        viewModel.startDeviceScanning { [weak self] in
+            guard let self = self else { return }
+            viewModel.loadInitialWiFiNetworks()
+            
+            self.router?.dissmiss(viewController: self, animated: true, completion: {
+                self.router?.showResult(viewController: self, animated: true)
+            })
         }
     }
     
     private func updateUI() {
-        wifiNameLabel.text = wifiName
+        wifiNameLabel.text = viewModel.currentWIFI
     }
     
-    func setupUI() {
+    
+    func configureView() {
         self.view.backgroundColor = UIColor.bgColor
         
         view.addSubview(scaningLabel)
@@ -167,12 +165,10 @@ class ScanViewController: UIViewController {
             stopButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             stopButton.heightAnchor.constraint(equalToConstant: 50)
         ])
-        
-        stopButton.addTarget(self, action: #selector(stopDetectionTapped), for: .touchUpInside)
     }
     
     @objc func stopDetectionTapped() {
-        isScanningStopped = true
+        viewModel.cancelLoadingWiFiNetworks()
         router?.dissmiss(viewController: self, animated: true, completion: {})
     }
 }

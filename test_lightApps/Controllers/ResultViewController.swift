@@ -35,22 +35,26 @@ class ResultViewController: UIViewController {
         tableView.layer.cornerRadius = 12
         tableView.layer.masksToBounds = true
         tableView.backgroundColor = .clear
+        tableView.isUserInteractionEnabled = true
+
         return tableView
     }()
-    
-    
-    private func updateUI() {
-        wifiNameLabel.text = viewModel.currentWIFI
-        resultCountLabel.text = ("\(String(describing: viewModel.totalDevicesFound))")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        updateUI()
-        configureNavigationBar()
-        setupBindings()
         viewModel.updateRandomWiFiNetworks()
+    }
+    
+    
+    func setupUI() {
+        configureView()
+        configureNavigationBar()
+        updateUI()
+        setupBindings()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
     private func setupBindings() {
@@ -63,7 +67,8 @@ class ResultViewController: UIViewController {
         }
     }
     
-    func setupUI() {
+    
+    func configureView() {
         self.view.backgroundColor = UIColor.bgColor
         
         view.addSubview(wifiNameLabel)
@@ -87,9 +92,6 @@ class ResultViewController: UIViewController {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-        
-        tableView.dataSource = self
-        tableView.delegate = self
     }
     
     func configureNavigationBar() {
@@ -113,12 +115,16 @@ class ResultViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = backButtonItem
     }
     
+    private func updateUI() {
+        wifiNameLabel.text = viewModel.currentWIFI
+        resultCountLabel.text = ("\(String(describing: viewModel.totalDevicesFound))")
+    }
+    
     @objc func backButtonTapped() {
         router?.dissmiss(viewController: self, animated: true, completion: {})
     }
 }
 
-// MARK: - UITableViewDataSource, UITableViewDelegate
 extension ResultViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return wifiNetworks.count
@@ -128,6 +134,12 @@ extension ResultViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: WiFiCell.identifier, for: indexPath) as! WiFiCell
         let network = wifiNetworks[indexPath.row]
         cell.configure(with: network)
+        
+        cell.didSelect = { [weak self] network in
+            guard let self = self else { return }
+            router?.showDetails(name: network.name, isOK: network.isOk, ip: network.IP, connectionType: network.connectionType, macAddress: network.MACAddress, hostname: network.hostname, viewController: self, animated: false)
+        }
+        
         return cell
     }
 }

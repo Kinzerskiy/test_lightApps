@@ -9,11 +9,24 @@ import UIKit
 
 class MainViewController: UIViewController {
     var router: MainRouting?
+    
     private let viewModel = ViewModel.shared
+    private let currentLabel = UILabel()
+    private let currentWIFILabel = UILabel()
+    private let scanLabel = UILabel()
+    private let scanButton = UIButton(type: .system)
+    private var hasSetCurrentWIFI = false
+    private let labelTexts = [
+        "Infrared Detection",
+        "Bluetooth Detection",
+        "Magnetic Detection",
+        "Antispy\n Tips"
+    ]
     
     private let titleImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
+        
         imageView.clipsToBounds = true
         return imageView
     }()
@@ -34,7 +47,6 @@ class MainViewController: UIViewController {
         return view
     }()
     
-    
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -46,21 +58,6 @@ class MainViewController: UIViewController {
         collectionView.backgroundColor = .clear
         return collectionView
     }()
-    
-    private let currentLabel = UILabel()
-    private let currentWIFILabel = UILabel()
-    private let scanLabel = UILabel()
-    private let button = UIButton(type: .system)
-    
-    private let labelTexts = [
-        "Infrared Detection",
-        "Bluetooth Detection",
-        "Magnetic Detection",
-        "Antispy\n Tips"
-    ]
-    
-    private var hasSetCurrentWIFI = false
-    
     
     private var currentWIFI: String? {
         didSet {
@@ -84,8 +81,22 @@ class MainViewController: UIViewController {
     }
     
     func setupUI() {
-        
         self.view.backgroundColor = UIColor.bgColor
+        configureNavigationBar()
+        configureStackView()
+        configureContainerView()
+        configureCollectionView()
+    }
+    
+    private func configureNavigationBar() {
+        let setupImage = UIImage(named: "filter")
+        let setupButton = UIBarButtonItem(image: setupImage, style: .plain, target: self, action: #selector(didTapSetupButton))
+        setupButton.tintColor = .white
+        navigationItem.rightBarButtonItem = setupButton
+    }
+    
+    private func configureStackView() {
+        stackView.addArrangedSubview(containerView)
         
         titleImageView.image = UIImage(named: "bgMain")
         titleImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -95,9 +106,11 @@ class MainViewController: UIViewController {
         NSLayoutConstraint.activate([
             titleImageView.topAnchor.constraint(equalTo: view.topAnchor),
             titleImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            titleImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            titleImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            titleImageView.heightAnchor.constraint(equalToConstant: Constants.titleImageHeight)
         ])
         
+        stackView.addArrangedSubview(containerView)
         view.addSubview(stackView)
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Constants.stackViewAncorHeight),
@@ -105,18 +118,10 @@ class MainViewController: UIViewController {
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-        
-        configureContainerView()
-        configureCollectionView()
-        
-        let setupImage = UIImage(named: "filter")
-        let setupButton = UIBarButtonItem(image: setupImage, style: .plain, target: self, action: #selector(didTapSetupButton))
-        setupButton.tintColor = .white
-        navigationItem.rightBarButtonItem = setupButton
     }
     
     private func configureContainerView() {
-        stackView.addArrangedSubview(containerView)
+      
         containerView.heightAnchor.constraint(equalToConstant: Constants.containerViewHeight).isActive = true
         
         
@@ -142,22 +147,22 @@ class MainViewController: UIViewController {
         scanLabel.textAlignment = .center
         
         
-        button.setTitle("Scan current network", for: .normal)
-        button.backgroundColor = .buttonColor
-        button.setTitleColor(.white, for: .normal)
-        button.layer.cornerRadius = Constants.mainButtonHeight / 2
-        button.addTarget(self, action: #selector(startScanTapped), for: .touchUpInside)
+        scanButton.setTitle("Scan current network", for: .normal)
+        scanButton.backgroundColor = .buttonColor
+        scanButton.setTitleColor(.white, for: .normal)
+        scanButton.layer.cornerRadius = Constants.mainButtonHeight / 2
+        scanButton.addTarget(self, action: #selector(startScanTapped), for: .touchUpInside)
         
         containerView.addSubview(currentLabel)
         containerView.addSubview(currentWIFILabel)
         containerView.addSubview(scanLabel)
-        containerView.addSubview(button)
+        containerView.addSubview(scanButton)
         
         containerView.translatesAutoresizingMaskIntoConstraints = false
         currentLabel.translatesAutoresizingMaskIntoConstraints = false
         currentWIFILabel.translatesAutoresizingMaskIntoConstraints = false
         scanLabel.translatesAutoresizingMaskIntoConstraints = false
-        button.translatesAutoresizingMaskIntoConstraints = false
+        scanButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             containerView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 20),
@@ -177,11 +182,11 @@ class MainViewController: UIViewController {
             scanLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             scanLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
             
-            button.topAnchor.constraint(equalTo:     scanLabel.bottomAnchor, constant: 16),
-            button.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
-            button.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
-            button.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -24),
-            button.heightAnchor.constraint(equalToConstant: Constants.mainButtonHeight)
+            scanButton.topAnchor.constraint(equalTo:     scanLabel.bottomAnchor, constant: 16),
+            scanButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
+            scanButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
+            scanButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -24),
+            scanButton.heightAnchor.constraint(equalToConstant: Constants.mainButtonHeight)
         ])
     }
     
@@ -206,11 +211,10 @@ class MainViewController: UIViewController {
     }
     
     @objc private func startScanTapped() {
-        router?.showScan(wifiName: viewModel.currentWIFI ?? "TLind_246_lp", viewController: self, animated: true)
+        router?.showScan(viewController: self, animated: true)
     }
 }
 
-// MARK: - UICollectionViewDataSource
 extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return labelTexts.count
@@ -226,7 +230,6 @@ extension MainViewController: UICollectionViewDataSource {
     }
 }
 
-// MARK: - UICollectionViewDelegate
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -261,7 +264,6 @@ extension MainViewController: UICollectionViewDelegate {
     }
 }
 
-// MARK: - UICollectionViewDelegateFlowLayout
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let totalSpacing = CGFloat(15)

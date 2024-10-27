@@ -42,4 +42,15 @@ class Constants {
         }
     }()
     
+    static let titleImageHeight: CGFloat = {
+        
+        let screenHeight = UIScreen.main.bounds.height
+        
+        if screenHeight <= 667 {
+            return 190
+        } else {
+            return 320
+        }
+    }()
+    
 }

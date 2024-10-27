@@ -10,13 +10,13 @@ import UIKit
 
 protocol MainRouting: BaseRouting, DismissRouting {
     func showMagneticDetection(viewController: UIViewController, animated: Bool)
-    func showScan(wifiName: String, viewController: UIViewController, animated: Bool)
+    func showScan(/*wifiName: String,*/ viewController: UIViewController, animated: Bool)
     func showInfratedDetection(viewController: UIViewController, animated: Bool)
     func showBluetoothDetection(viewController: UIViewController, animated: Bool)
     func showAntispyTips(viewController: UIViewController, animated: Bool)
     func showSetup(viewController: UIViewController, animated: Bool)
     func showResult(viewController: UIViewController, animated: Bool)
-    func showDetails(name: String, ip: String, connectionType: String, macAddress: String, hostname: String, viewController: UIViewController, animated: Bool)
+    func showDetails(name: String, isOK: Bool, ip: String, connectionType: String, macAddress: String, hostname: String, viewController: UIViewController, animated: Bool)
 }
 
 class MainRouter: BaseRouter, MainRouting {
@@ -50,14 +50,14 @@ class MainRouter: BaseRouter, MainRouting {
     func showMagneticDetection(viewController: UIViewController, animated: Bool) {
         let vc: MagneticDetectionViewController = assembly.assemblyMagneticDetectionViewController(with: self)
         
-        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: animated)
     }
     
-    func showScan(wifiName: String, viewController: UIViewController, animated: Bool) {
+    func showScan(/*wifiName: String, */viewController: UIViewController, animated: Bool) {
         let vc: ScanViewController = assembly.assemblyScanViewController(with: self)
         
 //        navigationController?.pushViewController(vc, animated: true)
-        vc.wifiName = wifiName
+//        vc.wifiName = wifiName
         vc.modalPresentationStyle = .fullScreen
         viewController.present(vc, animated: animated, completion: nil)
     }
@@ -65,43 +65,44 @@ class MainRouter: BaseRouter, MainRouting {
     func showInfratedDetection(viewController: UIViewController, animated: Bool) {
         let vc: InfratedDetectionViewController = assembly.assemblyInfratedViewController(with: self)
         
-        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: animated)
     }
     
     func showBluetoothDetection(viewController: UIViewController, animated: Bool) {
         let vc: BluetoothDetectionViewController = assembly.assemblyBluetoothViewController(with: self)
         
-        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: animated)
     }
     
     func showAntispyTips(viewController: UIViewController, animated: Bool) {
         let vc: AntispyTipsViewController = assembly.assemblyAntispyTipshViewController(with: self)
         
-        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: animated)
     }
     
     func showSetup(viewController: UIViewController, animated: Bool) {
         let vc: SetupViewController = assembly.assemblySetupViewController(with: self)
         
-        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: animated)
     }
     
     func showResult(viewController: UIViewController, animated: Bool) {
         let vc: ResultViewController = assembly.assemblyResultViewController(with: self)
        
-        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: animated)
     }
     
-    func showDetails(name: String, ip: String, connectionType: String, macAddress: String, hostname: String, viewController: UIViewController, animated: Bool) {
+    func showDetails(name: String, isOK: Bool, ip: String, connectionType: String, macAddress: String, hostname: String, viewController: UIViewController, animated: Bool) {
         let vc: DeviceDetailsViewController = assembly.assemblyDetailsViewController(with: self)
-    
+        
         vc.name = name
         vc.ip = ip
         vc.connectionType = connectionType
         vc.macAddress = macAddress
         vc.hostname = hostname
+        vc.isOK = isOK
         
-        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: animated)
     }
     
     func dissmiss(viewController: UIViewController, animated: Bool, completion: (() -> ())?) {

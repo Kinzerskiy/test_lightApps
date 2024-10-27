@@ -11,6 +11,8 @@
 		3A1D90D42CCD3F0900B22D38 /* WiFiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D90D32CCD3F0900B22D38 /* WiFiCell.swift */; };
 		3A1D90D72CCD46CC00B22D38 /* WiFiNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D90D62CCD46CC00B22D38 /* WiFiNetwork.swift */; };
 		3A1D90DB2CCD4F5700B22D38 /* DeviceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D90DA2CCD4F5700B22D38 /* DeviceDetailsViewController.swift */; };
+		3A1D90DD2CCE2BAE00B22D38 /* MagneticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D90DC2CCE2BAE00B22D38 /* MagneticView.swift */; };
+		3A1D90E32CCE578700B22D38 /* DetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D90E22CCE578700B22D38 /* DetailsCell.swift */; };
 		3A88C4D42CCCC1B400ED9959 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A88C4D32CCCC1B400ED9959 /* AppDelegate.swift */; };
 		3A88C4D62CCCC1B400ED9959 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A88C4D52CCCC1B400ED9959 /* SceneDelegate.swift */; };
 		3A88C4D82CCCC1B400ED9959 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A88C4D72CCCC1B400ED9959 /* MainViewController.swift */; };
@@ -42,6 +44,8 @@
 		3A1D90D32CCD3F0900B22D38 /* WiFiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiCell.swift; sourceTree = "<group>"; };
 		3A1D90D62CCD46CC00B22D38 /* WiFiNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiNetwork.swift; sourceTree = "<group>"; };
 		3A1D90DA2CCD4F5700B22D38 /* DeviceDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailsViewController.swift; sourceTree = "<group>"; };
+		3A1D90DC2CCE2BAE00B22D38 /* MagneticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagneticView.swift; sourceTree = "<group>"; };
+		3A1D90E22CCE578700B22D38 /* DetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCell.swift; sourceTree = "<group>"; };
 		3A88C4D02CCCC1B400ED9959 /* test_lightApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test_lightApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A88C4D32CCCC1B400ED9959 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A88C4D52CCCC1B400ED9959 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +90,7 @@
 			children = (
 				3A88C5082CCCF48E00ED9959 /* MainCell.swift */,
 				3A1D90D32CCD3F0900B22D38 /* WiFiCell.swift */,
+				3A1D90E22CCE578700B22D38 /* DetailsCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -105,6 +110,25 @@
 				3A88C5042CCCD81200ED9959 /* Color+extension.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		3A1D90DE2CCE3E4800B22D38 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A1D90DC2CCE2BAE00B22D38 /* MagneticView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3A1D90E12CCE51C900B22D38 /* Unuse */ = {
+			isa = PBXGroup;
+			children = (
+				3A88C4FE2CCCCDF400ED9959 /* AntispyTipsViewController.swift */,
+				3A88C5002CCCCFDA00ED9959 /* SetupViewController.swift */,
+				3A88C4FC2CCCCDE000ED9959 /* BluetoothDetectionViewController.swift */,
+				3A88C4FA2CCCCDC500ED9959 /* InfratedDetectionViewController.swift */,
+			);
+			path = Unuse;
 			sourceTree = "<group>";
 		};
 		3A88C4C72CCCC1B400ED9959 = {
@@ -134,10 +158,11 @@
 				3A88C5032CCCD62900ED9959 /* Assembly */,
 				3A88C4F72CCCCADA00ED9959 /* Controllers */,
 				3A1D90D52CCD3F1000B22D38 /* Cells */,
+				3A1D90DE2CCE3E4800B22D38 /* Views */,
 				3A1D90D92CCD46FC00B22D38 /* Helpers */,
+				3A88C4DC2CCCC1B600ED9959 /* Assets.xcassets */,
 				3A88C4E12CCCC1B600ED9959 /* Info.plist */,
 				3A88C4DE2CCCC1B600ED9959 /* LaunchScreen.storyboard */,
-				3A88C4DC2CCCC1B600ED9959 /* Assets.xcassets */,
 				3A88C50A2CCD047600ED9959 /* scanAnimation.json */,
 				3A1D90D12CCD3DCE00B22D38 /* wifi_networks.json */,
 			);
@@ -150,12 +175,9 @@
 				3A88C4D72CCCC1B400ED9959 /* MainViewController.swift */,
 				3A88C4F52CCCCAC400ED9959 /* MagneticDetectionViewController.swift */,
 				3A88C4F82CCCCD0900ED9959 /* ScanViewController.swift */,
-				3A88C4FA2CCCCDC500ED9959 /* InfratedDetectionViewController.swift */,
-				3A88C4FC2CCCCDE000ED9959 /* BluetoothDetectionViewController.swift */,
-				3A88C4FE2CCCCDF400ED9959 /* AntispyTipsViewController.swift */,
-				3A88C5002CCCCFDA00ED9959 /* SetupViewController.swift */,
 				3A88C50F2CCD2A1100ED9959 /* ResultViewController.swift */,
 				3A1D90DA2CCD4F5700B22D38 /* DeviceDetailsViewController.swift */,
+				3A1D90E12CCE51C900B22D38 /* Unuse */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -265,7 +287,9 @@
 				3A88C4F02CCCC5A500ED9959 /* BaseAssembly.swift in Sources */,
 				3A88C4EA2CCCC53700ED9959 /* MainRouter.swift in Sources */,
 				3A88C5012CCCCFDA00ED9959 /* SetupViewController.swift in Sources */,
+				3A1D90E32CCE578700B22D38 /* DetailsCell.swift in Sources */,
 				3A88C5052CCCD81200ED9959 /* Color+extension.swift in Sources */,
+				3A1D90DD2CCE2BAE00B22D38 /* MagneticView.swift in Sources */,
 				3A88C4EC2CCCC54E00ED9959 /* BaseRouter.swift in Sources */,
 				3A1D90D42CCD3F0900B22D38 /* WiFiCell.swift in Sources */,
 				3A88C4D82CCCC1B400ED9959 /* MainViewController.swift in Sources */,

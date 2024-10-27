@@ -9,6 +9,7 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
+    private let viewModel = ViewModel.shared
     var window: UIWindow?
     private var applicationRouter: ApplicationRouter?
     

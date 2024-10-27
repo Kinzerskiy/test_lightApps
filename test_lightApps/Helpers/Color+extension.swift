@@ -15,6 +15,8 @@ extension UIColor {
     static let mainSecondaryColor = UIColor(hex: "23175F")
     static let buttonColor = UIColor(hex: "6D59D3")
     static let mainGrayColor = UIColor(hex: "525878")
+    static let redColor = UIColor(hex: "D92929")
+   
     
     convenience init(hex: String, alpha: CGFloat = 1.0) {
         let hexFormatted = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)

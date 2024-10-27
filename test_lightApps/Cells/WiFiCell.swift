@@ -48,7 +48,12 @@ class WiFiCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    var didSelect: ((WiFiNetwork) -> Void)?
+    private var network: WiFiNetwork?
+    
     private func setupUI() {
+        self.selectionStyle = .default
+        
         contentView.backgroundColor = .mainInfoColor
         contentView.addSubview(wifiImageView)
         contentView.addSubview(nameLabel)
@@ -83,8 +88,19 @@ class WiFiCell: UITableViewCell {
     }
     
     func configure(with network: WiFiNetwork) {
+        self.network = network
         nameLabel.text = network.name
         ipLabel.text = network.IP
         wifiImageView.image = network.isOk ? UIImage(named: "wifi") : UIImage(named: "wifi-error")
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(cellTapped))
+        addGestureRecognizer(tapGesture)
+        isUserInteractionEnabled = true
+    }
+    
+    @objc private func cellTapped() {
+        if let network = network {
+            didSelect?(network)
+        }
     }
 }

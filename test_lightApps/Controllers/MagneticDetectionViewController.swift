@@ -7,9 +7,12 @@
 
 import UIKit
 
-
 class MagneticDetectionViewController: UIViewController {
     var router: MainRouting?
+    
+    private var isDetectionActive = false
+    private var currentMagneticValue: CGFloat = 0
+    private var timer: Timer?
     
     private let titleImageView: UIImageView = {
         let imageView = UIImageView()
@@ -18,13 +21,18 @@ class MagneticDetectionViewController: UIViewController {
         return imageView
     }()
     
-    private let magneticView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor.clear
+    private let magneticView: MagneticView = {
+        let view = MagneticView(frame: .zero, maxMagnetic: 300, backgroundImage: UIImage(named: "magnetic"))
         return view
     }()
     
-
+    private let lineView: UIView = {
+        let line = UIView()
+        line.backgroundColor = .red
+        line.translatesAutoresizingMaskIntoConstraints = false
+        return line
+    }()
+    
     private let searchLabel: UILabel = {
         let label = UILabel()
         label.text = "Search checking"
@@ -44,28 +52,20 @@ class MagneticDetectionViewController: UIViewController {
         return button
     }()
     
-    private let backgroundImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        return imageView
-    }()
-    
-    private let overlayImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        imageView.clipsToBounds = true
-        return imageView
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        configureNavigationBar()
     }
     
     func setupUI() {
         self.view.backgroundColor = UIColor.bgColor
+        startButton.addTarget(self, action: #selector(startDetectionTapped), for: .touchUpInside)
+        configureNavigationBar()
+        configureView()
+    }
+    
+    func configureView() {
         titleImageView.image = UIImage(named: "bgMagnetic")
         titleImageView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(titleImageView)
@@ -73,8 +73,6 @@ class MagneticDetectionViewController: UIViewController {
         view.addSubview(magneticView)
         magneticView.translatesAutoresizingMaskIntoConstraints = false
         
-      
-        setupMagneticView()
         
         view.addSubview(searchLabel)
         searchLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -100,34 +98,6 @@ class MagneticDetectionViewController: UIViewController {
             startButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             startButton.heightAnchor.constraint(equalToConstant: 50)
         ])
-        startButton.addTarget(self, action: #selector(startDetectionTapped), for: .touchUpInside)
-    }
-    
-    private func setupMagneticView() {
-        backgroundImageView.image = UIImage(named: "magnetic")
-        backgroundImageView.contentMode = .scaleAspectFit
-        backgroundImageView.clipsToBounds = true
-        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
-        magneticView.addSubview(backgroundImageView)
-        
-      
-        overlayImageView.image = UIImage(named: "arrow")
-        overlayImageView.translatesAutoresizingMaskIntoConstraints = false
-        magneticView.addSubview(overlayImageView)
-
-        NSLayoutConstraint.activate([
-            backgroundImageView.topAnchor.constraint(equalTo: magneticView.topAnchor),
-            backgroundImageView.leadingAnchor.constraint(equalTo: magneticView.leadingAnchor),
-            backgroundImageView.trailingAnchor.constraint(equalTo: magneticView.trailingAnchor),
-            backgroundImageView.bottomAnchor.constraint(equalTo: magneticView.bottomAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
-            overlayImageView.leadingAnchor.constraint(equalTo: magneticView.leadingAnchor, constant: 90),
-            overlayImageView.bottomAnchor.constraint(equalTo: magneticView.bottomAnchor, constant: 30),
-            overlayImageView.widthAnchor.constraint(equalToConstant: 100),
-            overlayImageView.heightAnchor.constraint(equalToConstant: 100)
-        ])
     }
     
     func configureNavigationBar() {
@@ -151,11 +121,46 @@ class MagneticDetectionViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = backButtonItem
     }
     
-    @objc func backButtonTapped() {
+     @objc func backButtonTapped() {
         router?.dissmiss(viewController: self, animated: true, completion: {})
     }
     
-    @objc func startDetectionTapped() {
-//        animateArrow()
+    
+     @objc func startDetectionTapped() {
+        if isDetectionActive {
+            stopDetection()
+        } else {
+            let incomingValue: CGFloat = CGFloat(arc4random_uniform(100)) / 100 * 140
+            startDetection(with: incomingValue)
+        }
+    }
+    
+   private func startDetection(with magneticValue: CGFloat) {
+        guard !isDetectionActive else { return }
+        isDetectionActive = true
+        startButton.setTitle("Stop", for: .normal)
+        
+        currentMagneticValue = magneticValue
+        self.magneticView.setMagnetic(currentMagneticValue)
+        self.magneticView.startAccelerating()
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
+            guard let self = self else { return }
+            
+            let targetMagneticValue: CGFloat = CGFloat(arc4random_uniform(100)) / 100 * 140
+            
+            self.currentMagneticValue += (targetMagneticValue - self.currentMagneticValue) * 0.1
+            self.magneticView.setMagnetic(self.currentMagneticValue)
+        }
+    }
+    
+    private func stopDetection() {
+        isDetectionActive = false
+        startButton.setTitle("Start Detection", for: .normal)
+        
+        timer?.invalidate()
+        timer = nil
+        
+        self.magneticView.endAccelerating()
     }
 }
